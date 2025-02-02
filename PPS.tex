@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage{amsmath}  
+\usepackage{titling}
+\usepackage{indentfirst}
+
+
+
+
+
+	
+
+
+\title{\textbf{Property Purchase Strategy}}
+
+\begin{document}
+
+
+\maketitle
+
+
+\begin{center}
+    \large Matthew Sharpe, Jacob Ginder \\   Department of  Business Administration: Thomas More University \\  
+    \large BUA 341: Quantitative Methods for Business \\  
+    \large Professor Moyer \\  
+\end{center}
+
+
+\section{Introduction}
+
+
+\indent Glen Foreman is contemplating a significant financial decision – whether Oceanview Development Corporation should submit a 5 million dollar bid to purchase property at a county tax foreclosure sale. The current date is June 1, and all sealed bids for the property must be submitted by August 15. However, the property is currently zoned for single family residences only, while Oceanview would like to build and sell a complex of luxury condominiums. There is a possibility that a referendum could be passed, allowing Oceanview to build the condominiums if they acquire the property. Furthermore, the sealed bid procedure requires 10 percent of the original bid (500,000) up front, serving as the downpayment for the purchase, without a refund. Foreman was able to determine that there was 0.3 probability that referendum would be approved, along with an estimated revenue of 15,000,000, and costs totaling 13,000,000 for the property. He suggests that Oceanview may hire a market researcher that would provide a more accurate probability of the referendum’s likelihood of passing for a cost of 15,000. The third-party research results would be available prior to the bidding deadline, ensuring that the timeline makes sense for Oceanview to potentially hire the research firm.\\ \\ \\ \\ \\ \\ \\
+
+  
+
+
+
+
+\section*{Quantitative Tools}
+
+The quantitative methods that we will employ to help Oceanview solve this case are as follows:
+
+\begin{itemize}
+    \item Decision Tree Analysis
+    \item Expected Value Calculations
+    \item Probability Risk Analysis
+    \item Sensitivity Analysis
+    \item Bayes Theorem
+     \item Conditional Probability
+     \item Prior/Posterior Probability
+     \item Margin/Joint Probability
+     \item Bayes Tables
+\end{itemize}
+
+
+\section{Case Analysis}
+1. If the market research for Oceanview is not available, we would reccommend that they place their 5 million dollar bid for the property, as the expected value of the decision node is +50,000. \\ \\
+2. If the market research is available for Oceanview, we would reccommend that they still place their 5 million dollar bid on the property, the expected value of that decision node is +214,103 \\ \\
+3. Yes, Oceanview should continue with their purchase oif the market research for 15,000. The expected value of the decicion node is 50,000, which is greater than the cost to purchase. \\ \\ \\  \\ \\ \\ \\  \\  \\  \\ \\
+
+	
+
+
+
+
+\section{Appendix}
+I will note that I rounded the probabilities to 3 decimal places for both tables. \\
+The bayes table for forecast "A" (Zoning change approval)
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{State of Nature} & \textbf{Prior} & \textbf{Conditional} & \textbf{Joint} & \textbf{Posterior} \\
+\hline
+s1 &  0.3 & 0.9  & 0.27 &  ~ 0.659\\
+\hline
+s2  & 0.7 & 0.2 & 0.14 &  ~ 0.341\\
+\hline
+\end{tabular}
+\caption{P(A) | Marginal Probability = 0.41  }
+\end{table}
+
+
+
+The bayes table for forecast "N" (Zoning change rejection)
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{State of Nature} & \textbf{Prior} & \textbf{Conditional} & \textbf{Joint} & \textbf{Posterior} \\
+\hline
+s1 &  0.3 & 0.1  & 0.03 &  ~ 0.051\\
+\hline
+s2  & 0.7 & 0.8 & 0.56 &  ~ 0.949\\
+\hline
+\end{tabular}
+\caption{P(N) | Marginal Probability = 0.59 }
+\end{table}
+
+\section*{Additional Check}
+Total Law of Probability:
+
+\[
+Given:  P(A| s1) = 0.9,
+ P(A|s2) = 0.2, P(s1) = 0.3, therefore, P(s2) = 0.7
+\]
+
+\[
+P(A) =  \sum P(A| s1) * P(s1) + P(A|s2) * P(s2)
+\]
+Therefore, we have:
+
+\[
+P(A) = \sum(0.9) * (0.3) + 0.2 * (0.7) = 0.41 
+\]
+\[
+P(N) = 1 - P(A) = 0.59
+\]
+Our bayes table is correct.
+
+
+\section*{Calculations}
+
+ The expected value of chance node number 9 is as follows: 
+\[
+EV(9) = \sum (0.658) * (1,985,000) + (0.341) * (-515,000) = 1,130,515
+\]
+
+ The expected value of chance node number 6 is as follows: 
+\[
+EV(6) = \sum (0.2) * (1,130,515) + (0.8) * (-15000) = 214,103
+\]
+
+ Which then gives us the expected value for our decision node of whether to bid or not, given that the prediction was a referendrum approval: 
+\[
+EV(3) = 214,103
+\] \\
+
+
+ The expected value of chance node number 10 is as follows: 
+\[
+EV(10) = \sum (0.051) * (1,985,000) + (0.949) * (-515,000) = -387,500
+\]
+
+ The expected value of chance node number 7 is as follows: 
+\[
+EV(7) = \sum (0.2) * (-387,500) + (0.8) * (-15000) = -89,500
+\]
+
+ Which then gives us the expected value for our decision node of whether to bid or not, given that the prediction was a referendrum rejected: 
+\[
+EV(4) = -89,500
+\] \\
+
+
+ The expected value of chance node number 11 is as follows: 
+\[
+EV(11) = \sum (0.3) * (2,000,000) + (0.7) * (-500,000) = 250,000
+\]
+
+ The expected value of chance node number 8 is as follows: 
+\[
+EV(8) = \sum (0.2) * (250,000) + (0.8) * (0) = 50,000
+\]
+
+ Which then gives us the expected value for our decision node of whether to bid or not, given that market research was not conducted or available: 
+\[
+EV(5) = 50,000
+\] \\
+
+
+
+
+
+
+\end{document}
